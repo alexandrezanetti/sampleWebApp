@@ -9,7 +9,7 @@ spec:
   path: /
   to:
     kind: Service
-	name: samplewebapp
+    name: samplewebapp
     weight: 100
   port:
     targetPort: 8080-tcp
