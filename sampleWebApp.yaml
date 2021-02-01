@@ -1,0 +1,59 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  labels: 
+    app: "SampleWebApp"
+  name: "SampleWebApp"
+spec:
+  selector:
+    matchLabels: 
+      name: "SampleWebApp"
+  template: 
+    metadata:
+      labels:
+        name: "SampleWebApp"      
+        app: "SampleWebApp"
+    spec:
+      containers:
+        - name: "SampleWebApp"
+          image: "hello-world:latest
+          ports:
+            - containerPort: 8080
+              name: "porta1"
+              protocol: TCP
+  replicas: 1 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: SampleWebApp
+  labels:
+    name: SampleWebApp
+    app: SampleWebApp
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    name: porta2
+    protocol: TCP
+    nodePort: 31888
+    targetPort: 8080
+  selector:
+    app:  SampleWebApp
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: SampleWebApp
+  labels:
+    name: SampleWebApp
+    app: SampleWebApp
+spec:
+  path: /
+  to:
+    kind: Service
+	name: SampleWebApp
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None
