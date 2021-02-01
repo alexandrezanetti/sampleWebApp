@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: "samplewebapp"
-          image: "hello-world:latest
+          image: "hello-world:latest"
           ports:
             - containerPort: 8080
               name: "porta1"
