@@ -3,9 +3,6 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: samplewebapp
   namespace: samplewebapp
-  labels:
-    name: samplewebapp
-    app: samplewebapp
 spec:
   path: /
   to:
