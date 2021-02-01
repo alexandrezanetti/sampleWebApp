@@ -4,6 +4,7 @@ metadata:
   labels: 
     app: "samplewebapp"
   name: "samplewebapp"
+  namespace: samplewebapp
 spec:
   selector:
     matchLabels: 
