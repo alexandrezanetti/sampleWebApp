@@ -1,14 +1,14 @@
-#kind: Route
-#apiVersion: route.openshift.io/v1
-#metadata:
-#  name: samplewebapp
-#  namespace: samplewebapp
-#spec:
-#  path: /
-#  to:
-#    kind: Service
-#    name: samplewebapp
-#    weight: 100
-#  port:
-#    targetPort: 8080-tcp
-#  wildcardPolicy: None
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: samplewebapp
+  namespace: samplewebapp
+spec:
+  path: /
+  to:
+    kind: Service
+    name: samplewebapp
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None
