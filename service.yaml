@@ -3,9 +3,6 @@ kind: Service
 metadata:
   name: samplewebapp
   namespace: samplewebapp
-  labels:
-    name: samplewebapp
-    app: samplewebapp
 spec:
   type: NodePort
   ports:
@@ -14,5 +11,3 @@ spec:
     protocol: TCP
     nodePort: 31888
     targetPort: 8080
-  selector:
-    app:  samplewebapp
