@@ -1,15 +1,15 @@
 kind: "Deployment"
 apiVersion: "apps/v1"
 metadata:
-  name: "samplewebapp"
+  name: samplewebapp
   namespace: samplewebapp
 spec:
   template: 
     metadata:
     spec:
       containers:
-        - name: "samplewebapp"
-          image: "hello-world:latest"
+        - name: samplewebapp
+          image: "nginxdemos/hello"
           ports:
             - containerPort: 8080
               name: "porta1"
